@@ -21,4 +21,4 @@ data = pd.read_csv("Demanda_DummyCOMPARING.csv")
 df = pd.DataFrame(data, columns= ['Client','Project','Role Title','Role ID','IQN','Status','POC','Resource Start Date','Role Created Date','Resource End Date'])
 
 # save data
-df.to_csv("dummy_data.csv") #, index=False)
+df.to_csv("dummy_data.csv", index=False)
