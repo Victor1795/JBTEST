@@ -14,4 +14,4 @@ df = pd.DataFrame(data, columns= ['Summary','Issue key','Issue id','Parent id','
 #df["Issue Type"] = 'Demand'
 
 # save data 
-df.to_csv("global_data.csv") #, index=False)
+df.to_csv("global_data.csv", index=False)
