@@ -38,7 +38,7 @@ result = df1.join(df2, how = "outer")
 
 
 # to show the fields that are important to you
-df = pd.DataFrame(columns= ['Summary','Issue Type','Status'])
+df = pd.DataFrame(columns= ['Epic Name','Summary','Issue Type','Status'])
 
 
 
@@ -56,7 +56,7 @@ while i < result['Client'].count():
 
     if(boolean_finding == False ):
     # to show the fields that are important to you
-        v = [x,y,z]
+        v = [x,x,y,z]
         v1 = pd.Series(v, index = df.columns)
         #print(v)
         df = df.append(v1, ignore_index=True)
