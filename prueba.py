@@ -64,7 +64,7 @@ while i < result['Client'].count():
         s = [np.nan,x]
         s1 = pd.Series(s, index = result.columns)
         result = result.append(s1, ignore_index=True)
-        df.to_csv("epic_data.csv")
+        df.to_csv("epic_data.csv", index=False)
 # Find string in summary columns
         #print(df)
         #print(result)
