@@ -37,18 +37,44 @@ print(result) # nuevo dataframe
 
 
 
-x = result.loc[0,'Client']
-print(x)
+df_data = open("df_data.csv", "w")
 
+# to show the fields that are important to you
+df = pd.DataFrame(data, columns= ['Client','Project','Role Title','Role ID','IQN','Status','POC','Resource Start Date','Role Created Date','Resource End Date'])
+
+#print (df, file=df_data)
+df_data.close()
+df["Issue Type"] = 'Demand'
+df.to_csv("df_data.csv", index=False)
+
+
+
+
+i = 0
+#print(i)
+# iteration starts 
+# Iterating using while loop
+while i < result['Client'].count():
+    x = result.loc[i,'Client']
+    print(i)
+    print(x)
+    boolean_finding = result['Summary'].str.contains(x).any()
+
+    if(boolean_finding == False ):
+    
 # Find string in summary column
-boolean_finding = result['Summary'].str.contains(result.loc[0,'Client']).any()
+    else 
+
 
 # Returns true if the
 print(boolean_finding)
 
-#Output
-# True se hace automaticamente un subtask, false se crea constante issue type como epic 
+#Outpu 
+#True se hace automaticamente un subtask, false se crea constante issue type como epic 
 
-# condicional if(boolean_finding):
+
+
     
 
+
+    i = i + 1 # close while
