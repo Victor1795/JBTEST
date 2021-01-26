@@ -40,18 +40,28 @@ n = 0 # to bring the parent id to the subtask (which is the issue id of  the epi
 # iteration 
 while i < result['Role ID'].count():
     x = result.loc[i,'Client']
+    #c = result.loc[i,'Client']
+    r = result.loc[i,'Role ID']
     y = 'Sub-task'
     z = 'OPEN' # status for now is on ????? maybe bc the dummy has on-hold, etc etc 
      
     boolean_finding = result['Summary'].str.contains(x).any()
 
     if(boolean_finding == True ): #True = create subTask  
-        
-        
 
-        #p = result.loc[n, 'Issue id'] # p is supposed to find issue id within the epics only
+####---------------------------------------------------------------------####
+        while n < result['Summary'].count():
 
-        v = [x,np.nan,np.nan,np.nan,y,z] #this is the final result where issue id of epic has been moved to parent id for the new subtask
+            if(result.loc[n,'Summary'] == result.loc[n,'Client'])
+                
+        n = n + 1
+
+####---------------------------------------------------------------------####
+#        boolean_finding = result['Summary'].str.contains(x).any()
+
+        #p = result.loc[i, 'Issue id'] # p is supposed to find issue id within the epics only
+
+        v = [r,np.nan,np.nan,np.nan,y,z] #this is the final result where issue id of epic has been moved to parent id for the new subtask
         v1 = pd.Series(v, index = df_primera.columns)
         df_primera = df_primera.append(v1, ignore_index=True)
         
@@ -66,3 +76,4 @@ while i < result['Role ID'].count():
 
 print(df_primera)
 print(df_final)
+print(result)
