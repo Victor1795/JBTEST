@@ -26,7 +26,7 @@ df.to_csv("dummy_data.csv", index=False)
 
 ############################## Reading DummyHR csv file & selecting important fields ###################################
 
-data = pd.read_csv("ee.csv")
+data = pd.read_csv("exep.csv")
 
 # selection
 df = pd.DataFrame(data, columns= ['Summary','Issue key','Issue id','Issue Type','Status'])
