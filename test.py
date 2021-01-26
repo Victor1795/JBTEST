@@ -16,16 +16,16 @@ import numpy as np
 
 
 ######## read / bring over
-data1 = pd.read_csv('dummy_data.csv')#,sep="\s+")
-data2 = pd.read_csv('global_data.csv')#,sep="\s+")
-data3 = pd.read_csv('actual_epics.csv')
+data1 = pd.read_csv('dummy_data.csv')        #semanal
+#data2 = pd.read_csv('global_data.csv')       #current jira
+data3 = pd.read_csv('new_global_data.csv')   #current jira with new epics
 
 ###### compare roleID vs Summary
 df1 = pd.DataFrame(data1, columns=['Client', 'Role ID'])
-df2 = pd.DataFrame(data2, columns=['Summary', 'Issue id', 'Parent id', 'Issue type'])
+#df2 = pd.DataFrame(data2, columns=['Summary', 'Issue id', 'Parent id', 'Issue type'])
 df3 = pd.DataFrame(data3, columns=['Summary', 'Issue id'])
 
-result = df1.join(df2, how = "outer")
+result = df1.join(df3, how = "outer") # Client, Role ID, Summary, Issue ID
 
 ## create new dataframe to compare 
 df = pd.DataFrame(columns= ['Summary', 'Role ID', 'Issue Type', 'Issue id', 'Parent id'])
@@ -43,8 +43,11 @@ while i < result['Role ID'].count():
     boolean_finding = result['Role ID'].str.contains(x).any()
 
     if(boolean_finding == False ): #first if refers to 
-        p = result.loc[n, 'Parent id'] # p is supposed to find issue id within the epics only
-        if( 
+        a = df1.loc[n, 'Role ID']
+        subTask_finding = df3['Summary'].str.contains(a).any()
+        if(subTask_finding == True)
+            p = result.loc[n, 'Parent id'] # p is supposed to find issue id within the epics only
+
         v = [x,x,y,np.nan,p] #this is the final result where issue id of epic has been moved to parent id for the new subtask
         v1 = pd.Series(v, index = df.columns)
         

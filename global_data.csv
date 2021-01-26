@@ -4,14 +4,13 @@ BANCO SABADELL,JBT-208,2352140,,Epic,OPEN,,,,,,,,,
 SAP,JBT-209,2352141,,Epic,OPEN,,,,,,,,,
 ACCENTURE SOFTWARE,JBT-210,2352142,,Epic,OPEN,,,,,,,,,
 CONSUMERS ENERGY,JBT-211,2352143,,Epic,OPEN,,,,,,,,,
-3479806,JBT-212,2352144,2352139,Sub-task,OPEN,"Uribe Munoz,Fernando",11592753,HSBC,0011213212 - HBMX Migration to AWS Wave,Migration Cloud Operations Engineer - Senior 03,3479806,1/25/2021 0:00,10/16/2020 0:00,12/31/2021 0:00
-3448666,JBT-213,2352145,2352140,Sub-task,OPEN,"Ruiz,Salvador",(blank),BANCO SABADELL,MX-BK-AS-VZ Apoyo Estructural F1,Technology Delivery Lead,3448666,1/4/2021 0:00,9/22/2020 0:00,9/30/2021 0:00
-3448671,JBT-214,2352146,2352140,Sub-task,OPEN,"Ruiz,Salvador",(blank),BANCO SABADELL,MX-BK-AS-VZ Apoyo Estructural F1,Technology Delivery Lead Copy 01,3448671,12/21/2020 0:00,9/22/2020 0:00,9/30/2021 0:00
-3503853,JBT-215,2352147,2352141,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank), SAP,9940199755 SAP MCD HEC,Build Services,3503853,1/4/2021 0:00,11/7/2020 0:00,12/31/2025 0:00
-3503854,JBT-216,2352148,2352141,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank),SAP,9940199755 SAP MCD HEC,SAP Cloud (Dev and Ops)-AD,3503854,1/4/2021 0:00,11/7/2020 0:00,12/31/2025 0:00
-3503855,JBT-217,2352150,2352141,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank), SAP,9940199755 SAP MCD HEC,SAP Cloud (Dev and Ops)-AD Copy 01,3503855,1/4/2021 0:00,11/7/2020 0:00,12/31/2025 0:00
-3508026,JBT-218,2352151,2352142,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,SR Platform Engineer - Squad Team,3508026,4/1/2021 0:00,11/11/2020 0:00,12/31/2021 0:00
-3581018,JBT-219,2352152,2352143,Sub-task,OPEN,"Kinnison,Phillip",(blank),CONSUMERS ENERGY,10970669,Mobile DevOps Engineer,3581018,2/1/2021 0:00,1/7/2021 0:00,10/15/2021 0:00
-3508049,JBT-220,2352153,2352142,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,Jr. Platform Engineer - Squad Team - ElasticSearch,3508049,4/1/2021 0:00,11/11/2020 0:00,12/31/2021 0:00
-3508059,JBT-221,2352155,2352142,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,Jr. Platform Engineer - Squad Team - Terraform,3508059,4/1/2021 0:00,11/11/2020 0:00,12/31/2021 0:00
-TEST1,JBT-222,1234567,,Epic,OPEN,,,,,,,,,
+3479806,JBT-212,2352144,2352139.0,Sub-task,OPEN,"Uribe Munoz,Fernando",11592753,HSBC,0011213212 - HBMX Migration to AWS Wave,Migration Cloud Operations Engineer - Senior 03,3479806.0,25/Jan/21 12:00 AM,16/Oct/20 12:00 AM,31/Dec/21 12:00 AM
+3448666,JBT-213,2352145,2352140.0,Sub-task,OPEN,"Ruiz,Salvador",(blank),BANCO SABADELL,MX-BK-AS-VZ Apoyo Estructural F1,Technology Delivery Lead,3448666.0,04/Jan/21 12:00 AM,22/Sep/20 12:00 AM,30/Sep/21 12:00 AM
+3448671,JBT-214,2352146,2352140.0,Sub-task,OPEN,"Ruiz,Salvador",(blank),BANCO SABADELL,MX-BK-AS-VZ Apoyo Estructural F1,Technology Delivery Lead Copy 01,3448671.0,21/Dec/20 12:00 AM,22/Sep/20 12:00 AM,30/Sep/21 12:00 AM
+3503853,JBT-215,2352147,2352141.0,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank), SAP,9940199755 SAP MCD HEC,Build Services,3503853.0,04/Jan/21 12:00 AM,07/Nov/20 12:00 AM,31/Dec/25 12:00 AM
+ 3503854,JBT-216,2352148,2352141.0,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank),SAP,9940199755 SAP MCD HEC,SAP Cloud (Dev and Ops)-AD,3503854.0,04/Jan/21 12:00 AM,07/Nov/20 12:00 AM,31/Dec/25 12:00 AM
+3503855,JBT-217,2352150,2352141.0,Sub-task,OPEN,"Garza Gil,Ovidio C.",(blank), SAP,9940199755 SAP MCD HEC,SAP Cloud (Dev and Ops)-AD Copy 01,3503855.0,04/Jan/21 12:00 AM,07/Nov/20 12:00 AM,31/Dec/25 12:00 AM
+3508026,JBT-218,2352151,2352142.0,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,SR Platform Engineer - Squad Team,3508026.0,01/Apr/21 12:00 AM,11/Nov/20 12:00 AM,31/Dec/21 12:00 AM
+3581018,JBT-219,2352152,2352143.0,Sub-task,OPEN,"Kinnison,Phillip",(blank),CONSUMERS ENERGY,10970669,Mobile DevOps Engineer,3581018.0,01/Feb/21 12:00 AM,07/Jan/21 12:00 AM,15/Oct/21 12:00 AM
+3508049,JBT-220,2352153,2352142.0,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,Jr. Platform Engineer - Squad Team - ElasticSearch,3508049.0,01/Apr/21 12:00 AM,11/Nov/20 12:00 AM,31/Dec/21 12:00 AM
+3508059,JBT-221,2352155,2352142.0,Sub-task,OPEN,"Melendez Sanchez,Alex",(blank),Accenture Software,APP Product Engineering Services,Jr. Platform Engineer - Squad Team - Terraform,3508059.0,01/Apr/21 12:00 AM,11/Nov/20 12:00 AM,31/Dec/21 12:00 AM

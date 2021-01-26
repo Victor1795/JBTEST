@@ -25,10 +25,10 @@ df.to_csv("dummy_data.csv", index=False)
 
 
 ########################### reading only epic csv with imp fields ###########
-data = pd.read_csv("exep.csv")
+data = pd.read_csv("NEW_TODOS.csv")
 
 # selection
-df = pd.DataFrame(data, columns= ['Summary', 'Issue key', 'Issue id', 'Issue Type', 'Status'])
+df = pd.DataFrame(data, columns= ['Summary', 'Issue key', 'Issue id', 'Parent id', 'Issue Type', 'Status'])
 
 # save data
-df.to_csv("actual_epics.csv", index=False)
+df.to_csv("new_global_data.csv", index=False)
