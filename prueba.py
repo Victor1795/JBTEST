@@ -3,8 +3,7 @@
 import pandas as pd
 import csv
 import numpy as np
-#from pandas.testing import assert_frame_equal
-
+from itertools import permutations
 
 
 ################################# NEW EPIC / WHERE YOU NEED TO COMPARE FIRST TO SEE IF IT EXISTS  #####################################
@@ -25,56 +24,69 @@ data2 = pd.read_csv('global_data.csv')#,sep="\s+")
 
 ###### compare roleID vs Summary
 df1 = pd.DataFrame(data1, columns=['Client'])
-
-
 df2 = pd.DataFrame(data2, columns=['Summary'])
-
-
 result = df1.join(df2, how = "outer")
-
-## create new column to check. true= theyre already a subtask, false means we need to add them as new ones and use the ID as summary
-print(result) # nuevo dataframe
+print(resultado) 
 
 
 
-df_data = open("df_data.csv", "w")
-
-# to show the fields that are important to you
-df = pd.DataFrame(data, columns= ['Client','Project','Role Title','Role ID','IQN','Status','POC','Resource Start Date','Role Created Date','Resource End Date'])
-
-#print (df, file=df_data)
-df_data.close()
-df["Issue Type"] = 'Demand'
-df.to_csv("df_data.csv", index=False)
+#summary = result.loc[0,'Client']
+        #df.loc(i,'Summary').append("x")
+        #print(df)
 
 
+#v = pd.DataFrame(data= [summary])
+#df.append(summary)
+#print(df)
+#print(v)
+
+
+#df = pd.DataFrame(columns={'Summary', 'Issue Type', 'Role Id'},  index=[x])
 
 
 i = 0
 #print(i)
 # iteration starts 
 # Iterating using while loop
-while i < result['Client'].count():
-    x = result.loc[i,'Client']
-    print(i)
-    print(x)
-    boolean_finding = result['Summary'].str.contains(x).any()
+while i < x['Client'].count():
+    #x = result.loc[i,'Client']
+    #df["Summary"] = x
+    #df["Issue Type"] = 'Epic'
+    #df["Status"] = 'OPEN'
+    #print(df)
+    #print(i)
+    #print(x
+    b = x.loc[i,'Client']
+    boolean_finding = x['Summary'].str.contains(b).any()
 
-    if(boolean_finding == False ):
-    
-# Find string in summary column
-    else 
+    if(boolean_finding == False):
+    # x = result.loc[i,'Client']
+        #df["Summary"] = b
+        #df["Issue Type"] = 'Epic'
+        #df["Status"] = 'OPEN'
+        print(x) 
 
+    #summary = result.loc[i,'Client']    
+        #df.loc(i,'Summary').append("x")
+        #print(df)
+        #v = pd.DataFrame([summary])
+        #df.append(v)
+        #print(df)
+        #df.loc(i, 'Issue Type') = 'Epic'
+    #df.loc(i, 'Status') = 'OPEN'
+
+
+        # issue type = epic
+    # solo necesita summary & client, que es el mismo (cliente)
+ 
+    #else 
+    # issue type = sub-task, y que copie su role ID a Summary
 
 # Returns true if the
-print(boolean_finding)
+#print(boolean_finding)
 
 #Outpu 
 #True se hace automaticamente un subtask, false se crea constante issue type como epic 
 
-
-
-    
-
-
-    i = i + 1 # close while
+i = i + 1 # close while
+#print(df)
