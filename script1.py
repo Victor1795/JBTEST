@@ -22,3 +22,14 @@ df = pd.DataFrame(data, columns= ['Client','Project','Role Title','Role ID','IQN
 
 # save data
 df.to_csv("dummy_data.csv", index=False)
+
+
+########################### reading only epic csv with imp fields ###########
+data = pd.read_csv("exep.csv")
+
+# selection
+df = pd.DataFrame(data, columns= ['Summary', 'Issue key', 'Issue id', 'Issue Type', 'Status'])
+
+# save data
+df.to_csv("actual_epics.csv", index=False)
+
