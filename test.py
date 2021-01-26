@@ -25,10 +25,14 @@ df1 = pd.DataFrame(data1, columns=['Client', 'Role ID'])
 #df2 = pd.DataFrame(data2, columns=['Summary', 'Issue id', 'Parent id', 'Issue type'])
 df3 = pd.DataFrame(data3, columns=['Summary', 'Issue id'])
 
-result = df1.join(df3, how = "outer") # Client, Role ID, Summary, Issue ID
+result = df1.join(df3, how = "outer") # Client(dummy feo), Role ID, Summary, Issue ID
 
 ## create new dataframe to compare 
-df = pd.DataFrame(columns= ['Summary', 'Role ID', 'Issue Type', 'Issue id', 'Parent id'])
+df_primera = pd.DataFrame(columns= ['Summary','Issue key','Issue id','Parent id','Issue Type','Status'])
+
+
+df_segunda = pd.DataFrame(columns= ['Client','Project','Role Title','Role ID','IQN','POC','Resource Start Date','Role Created Date','Resource End Date'])
+
 
 i = 0 # for role id (which ends up being both role id (custom) and summary
 n = 0 # to bring the parent id to the subtask (which is the issue id of  the epic)
@@ -37,26 +41,29 @@ n = 0 # to bring the parent id to the subtask (which is the issue id of  the epi
 while i < result['Role ID'].count():
     x = result.loc[i,'Role ID']
     y = 'Sub-task'
-    
-    #z = 'OPEN' status for now is on ????? maybe bc the dummy has on-hold, etc etc 
+    z = 'OPEN' # status for now is on ????? maybe bc the dummy has on-hold, etc etc 
      
-    boolean_finding = result['Role ID'].str.contains(x).any()
+    boolean_finding = result['Summary'].str.contains(x).any()
 
-    if(boolean_finding == False ): #first if refers to 
+    if(boolean_finding == False ): #False = create subTask  
+
         a = df1.loc[n, 'Role ID']
         subTask_finding = df3['Summary'].str.contains(a).any()
         if(subTask_finding == True)
             p = result.loc[n, 'Parent id'] # p is supposed to find issue id within the epics only
 
-        v = [x,x,y,np.nan,p] #this is the final result where issue id of epic has been moved to parent id for the new subtask
+        v = [x,np.nan,np.nan,p,y,z] #this is the final result where issue id of epic has been moved to parent id for the new subtask
         v1 = pd.Series(v, index = df.columns)
+        df_primera = df_primera.append(v1, ignore_index=True)
         
-        df = df.append(v1, ignore_index=True)
-        
-        s = [np.nan,x]
-        s1 = pd.Series(s, index = result.columns)
-        result = result.append(s1, ignore_index=True)
-        df.to_csv("epic_data.csv", index=False)
+
+        df_final = df_primera.join(df_segunda, how = "outer")
+
+
+        #s = [np.nan,x]
+        #s1 = pd.Series(s, index = result.columns)
+        #result = result.append(s1, ignore_index=True)
+        df_final.to_csv("subtask_finaldata.csv", index=False)
 
 
 
