@@ -44,7 +44,7 @@ while i < result['Role ID'].count():
     r = result.loc[i,'Role ID']
     y = 'Sub-task'
     z = 'OPEN' # status for now is on ????? maybe bc the dummy has on-hold, etc etc 
-     
+
     boolean_finding = result['Summary'].str.contains(x).any()
 
     if(boolean_finding == True ): #True = create subTask  
@@ -52,9 +52,16 @@ while i < result['Role ID'].count():
 ####---------------------------------------------------------------------####
         while n < result['Summary'].count():
 
-            if(result.loc[n,'Summary'] == result.loc[n,'Client'])
-                
-        n = n + 1
+            s = result.loc[n,'Summary']
+
+            summary_finding = result['Client'].str.contains(s).any()
+            if(summary_finding == True):
+                ik = result.loc[n,'Issue id']
+                p = []
+                p.append(ik)
+                print(p)
+
+            n = n + 1
 
 ####---------------------------------------------------------------------####
 #        boolean_finding = result['Summary'].str.contains(x).any()

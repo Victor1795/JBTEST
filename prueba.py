@@ -32,6 +32,8 @@ df2 = pd.DataFrame(data2, columns=['Summary'])
 
 result = df1.join(df2, how = "outer")
 
+#print(result)
+
 ## create new column to check. true= theyre already a subtask, false means we need to add them as new ones and use the ID as summary
 #print(result) # nuevo dataframe
 
@@ -60,6 +62,7 @@ while i < result['Client'].count():
         v1 = pd.Series(v, index = df.columns)
         #print(v)
         df = df.append(v1, ignore_index=True)
+        #print(df)
         #df.to_csv("epic_data.csv")
         s = [np.nan,x]
         s1 = pd.Series(s, index = result.columns)
@@ -76,5 +79,6 @@ while i < result['Client'].count():
 #True se hace automaticamente un subtask, false se crea constante issue type como epic 
 
     i = i + 1 # close while
+
 
 print(df)
