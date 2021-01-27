@@ -26,10 +26,11 @@ df1 = pd.DataFrame(data1, columns=['Client', 'Role ID'])
 df3 = pd.DataFrame(data3, columns=['Summary', 'Issue id'])
 
 result = df1.join(df3, how = "outer") # Client(dummy feo), Role ID, Summary, Issue ID
+result2 = df1.join(df3, how = "outer")
 #print(result)
 ## create new dataframe to compare 
 df_primera = pd.DataFrame(columns= ['Summary','Issue key','Issue id','Parent id','Issue Type','Status'])
-
+#result = result.astype({"Summary": str})
 
 df_segunda = pd.DataFrame(data1, columns= ['Client','Project','Role Title','Role ID','IQN','POC','Resource Start Date','Role Created Date','Resource End Date'])
 
@@ -47,27 +48,36 @@ while i < result['Role ID'].count():
     
 
     boolean_finding = result['Summary'].str.contains(x).any()
-
+    
     if(boolean_finding == True ): #True = create subTask  
 
 ####---------------------------------------------------------------------####
-        p =[]
-        while n < result['Summary'].count():
+    #p =[]
+       # while n < result['Summary'].count():
             #hor = 0
             #s = result.loc[n,'Client']
 #            iid = result.loc[n,'Issue id']
+        for n in result['Client']:
+           # summary_finding = result['Summary'].str.contains(x).any().all()#.apply(lambda xc: tuple(xc.index)).tolist()
+        
+#        result1 = result[result.duplicated(keep=False)]
 
-            summary_finding = result['Summary'].str.contains(x).any().all()
-
+#        result1 = result1.groupby(list(result1)).apply(lambda x: tuple(x.index)).tolist()
+#        print (df)
                 
-            print(summary_finding)
-            iid = result.loc[n,'Issue id']
-            if(summary_finding == True):
-                p.append(iid)
+            #print(summary_finding)
+            w = 0
+            for w in result['Summary']:
+                c = result.loc[n,'Client']
+                summ = result.loc[w,'Summary']
+                iid = result.loc[w,'Issue id']
+                #if (c == summ):
+    
+                    #p.append(iid)
+            #i2 = i2 + 1
+        print(p)
 
-                print(p)
-
-            n = n + 1
+        #n = n + 1
 
 ####---------------------------------------------------------------------####
 #        boolean_finding = result['Summary'].str.contains(x).any()
