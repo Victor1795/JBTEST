@@ -52,51 +52,27 @@ while i < result['Role ID'].count():
     if(boolean_finding == True ): #True = create subTask  
 
 ####---------------------------------------------------------------------####
-    #p =[]
-       # while n < result['Summary'].count():
-            #hor = 0
-            #s = result.loc[n,'Client']
-#            iid = result.loc[n,'Issue id']
-        for n in result['Client']:
-           # summary_finding = result['Summary'].str.contains(x).any().all()#.apply(lambda xc: tuple(xc.index)).tolist()
-        
-#        result1 = result[result.duplicated(keep=False)]
-
-#        result1 = result1.groupby(list(result1)).apply(lambda x: tuple(x.index)).tolist()
-#        print (df)
-                
-            #print(summary_finding)
+        p =[]
+        for n in range(len(result['Client'])):
             w = 0
-            for w in result['Summary']:
+            for w in range(len(result['Summary'])):
                 c = result.loc[n,'Client']
                 summ = result.loc[w,'Summary']
                 iid = result.loc[w,'Issue id']
-                #if (c == summ):
-    
-                    #p.append(iid)
-            #i2 = i2 + 1
-        print(p)
-
-        #n = n + 1
+                if (c == summ):
+                    p.append(iid)
 
 ####---------------------------------------------------------------------####
-#        boolean_finding = result['Summary'].str.contains(x).any()
-
-        #p = result.loc[i, 'Issue id'] # p is supposed to find issue id within the epics only
-        #print(p)
-        v = [r,np.nan,np.nan,np.nan,y,z] #this is the final result where issue id of epic has been moved to parent id for the new subtask
+        
+        v = [r,np.nan,np.nan,p[i],y,z] #this is the final result where issue id of epic has been moved to parent id for the new subtask
         v1 = pd.Series(v, index = df_primera.columns)
         df_primera = df_primera.append(v1, ignore_index=True)
         
         df_final = df_primera.join(df_segunda, how = "outer")
 
-        #s = [np.nan,x]
-        #s1 = pd.Series(s, index = result.columns)
-        #result = result.append(s1, ignore_index=True)
         df_final.to_csv("subtask_finaldata.csv", index=False)
 
     i = i + 1 # close while
 
-print(df_primera)
 print(df_final)
 print(result)
